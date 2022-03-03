@@ -1,4 +1,6 @@
 #include <string>
+#include <iostream>
+#include <vector>
 class Product
 {
 private:
