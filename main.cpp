@@ -20,7 +20,7 @@ Product AddProduct()
     std::cin >> MeasurementType;
     std::cout << "Введите кол-во товара в выбранных единицах измерения ---> ";
     std::cin >> MeasurementUnits;
-    std::cout << "Введито стоимость ---> ";
+    std::cout << "Введите стоимость ---> ";
     std::cin >> ProductCost;
     return Product(Title, Color, MeasurementType, MeasurementUnits, ProductCost, ID);
 }
