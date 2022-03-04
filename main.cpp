@@ -61,7 +61,7 @@ void ProductTable(vector<Product>&ProductList)
     for (int j=0;j<ProductAmount;j++)
     {
         cout<<"|"<<setw(MaxIDLength)<<left<<ProductList[j].m_GetID()<<"|"<<setw(MaxTitleLength)<<left<<ProductList[j].m_GetProductTitle()<<"|"<<setw(MaxColorLength)<<left<<ProductList[j].m_GetColor()
-        <<"|"<<setw(MaxMeasurementUnitsLength)<<left<<ProductList[j].m_GetMeasurementUnits()<<setw(MaxMeasurementTypeLength)<<left<<ProductList[j].m_GetMeasurementType()<<"|"<< endl;
+        <<"|"<<setw(MaxMeasurementUnitsLength+1)<<left<<ProductList[j].m_GetMeasurementUnits()<<'|'<<setw(MaxMeasurementTypeLength)<<left<<ProductList[j].m_GetMeasurementType()<<"|"<< endl;
     }
 }
 int main()
@@ -72,6 +72,6 @@ int main()
     for (int i = 0; i < ProductAmount; i++)
     {
         ProductList.push_back(AddProduct());
-    }
+    } 
     ProductTable(ProductList);
 }
