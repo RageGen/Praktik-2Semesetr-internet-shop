@@ -1,5 +1,4 @@
 #include "Product.h"
-#include <iostream>
 Product::Product(std::string Title, std::string Color, std::string MeasurementType, int64_t MeasurementUnits, int64_t ProductCost, int64_t ID)
 {
     m_ProductTitle = Title;
@@ -33,7 +32,4 @@ int64_t Product::m_GetID()
 {
     return m_ID;
 }
-void Product::m_OutProdcutInfo()
-{
-    std::cout << m_ID << "|" << m_ProductTitle << "|" << m_Color << "|" << m_MeasurementUnits << " " << m_MeasurementType << "|" << m_ProductCost << std::endl;
-}
+

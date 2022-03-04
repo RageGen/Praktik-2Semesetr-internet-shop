@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <iomanip>
 class Product
 {
 private:
@@ -25,6 +26,5 @@ public:
     int64_t m_SetMeasurementUnits();
     int64_t m_SetProductCost();
     int64_t m_SetID();
-    void m_OutProdcutInfo();
     Product m_AddProduct();
 };

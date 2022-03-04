@@ -24,6 +24,46 @@ Product AddProduct()
     std::cin >> ProductCost;
     return Product(Title, Color, MeasurementType, MeasurementUnits, ProductCost, ID);
 }
+void ProductTable(vector<Product>&ProductList)
+{
+    int64_t MaxIDLength=6;
+    int64_t MaxTitleLength=0;
+    int64_t MaxColorLength=0;
+    int64_t MaxMeasurementTypeLength=0;
+    int64_t MaxMeasurementUnitsLength=0;
+    for (int i=0;i<ProductAmount;i++)
+    {
+        if (ProductList[i].m_GetProductTitle().length()>MaxTitleLength)
+        {
+            MaxTitleLength=ProductList[i].m_GetProductTitle().length();
+        }
+        if (ProductList[i].m_GetColor().length()>MaxColorLength)
+        {
+            MaxColorLength=ProductList[i].m_GetColor().length();
+        }
+        if (ProductList[i].m_GetMeasurementType().length()>MaxMeasurementTypeLength)
+        {
+            MaxMeasurementTypeLength=ProductList[i].m_GetMeasurementType().length();
+        }
+    }
+    for (int i=0;i<ProductAmount;i++)
+    {
+        int64_t BufferUnit=ProductList[i].m_GetMeasurementUnits();
+        for (int k=0;BufferUnit>0;k++)
+        {
+            BufferUnit/=10;
+            if (k>MaxMeasurementUnitsLength)
+            {
+                MaxMeasurementUnitsLength=k;
+            }
+        }
+    }
+    for (int j=0;j<ProductAmount;j++)
+    {
+        cout<<"|"<<setw(MaxIDLength)<<left<<ProductList[j].m_GetID()<<"|"<<setw(MaxTitleLength)<<left<<ProductList[j].m_GetProductTitle()<<"|"<<setw(MaxColorLength)<<left<<ProductList[j].m_GetColor()
+        <<"|"<<setw(MaxMeasurementUnitsLength)<<left<<ProductList[j].m_GetMeasurementUnits()<<setw(MaxMeasurementTypeLength)<<left<<ProductList[j].m_GetMeasurementType()<<"|"<< endl;
+    }
+}
 int main()
 {
     vector<Product> ProductList;
@@ -33,8 +73,5 @@ int main()
     {
         ProductList.push_back(AddProduct());
     }
-    for (int i = 0; i < ProductAmount; i++)
-    {
-        ProductList[i].m_OutProdcutInfo();
-    }
+    ProductTable(ProductList);
 }
