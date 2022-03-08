@@ -1,6 +1,6 @@
 #include "Client.h"
-Client::Client(std::string fullName, std::int64_t phoneNum, std::string email, std::string address) {
-    m_full_name = fullName;
+Client::Client(std::string full_Name, std::int64_t phoneNum, std::string email, std::string address) {
+    m_full_name = full_Name;
     m_phone_number = phoneNum;
     m_email = email;
     m_address = address;
